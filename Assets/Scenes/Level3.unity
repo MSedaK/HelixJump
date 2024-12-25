@@ -883,6 +883,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c8a6f2b91018c0649a5897945a27888d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  scoreText: {fileID: 0}
   RestartMenu: {fileID: 1996707222}
   FinishMenu: {fileID: 1584807473}
   _Trapsource: {fileID: 242526694}
@@ -1883,17 +1884,17 @@ PrefabInstance:
     - target: {fileID: 1304955669154038257, guid: b66fd64baee7c044a8b8d52f92fd88ff,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.3499999
+      value: 5.6928144
       objectReference: {fileID: 0}
     - target: {fileID: 1304955669154038257, guid: b66fd64baee7c044a8b8d52f92fd88ff,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.3499999
+      value: 5.6928144
       objectReference: {fileID: 0}
     - target: {fileID: 1304955669154038257, guid: b66fd64baee7c044a8b8d52f92fd88ff,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.3499999
+      value: 5.6928144
       objectReference: {fileID: 0}
     - target: {fileID: 1304955669154038257, guid: b66fd64baee7c044a8b8d52f92fd88ff,
         type: 3}
@@ -1933,12 +1934,12 @@ PrefabInstance:
     - target: {fileID: 1304955669154038257, guid: b66fd64baee7c044a8b8d52f92fd88ff,
         type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: -436
+      value: -241
       objectReference: {fileID: 0}
     - target: {fileID: 1304955669154038257, guid: b66fd64baee7c044a8b8d52f92fd88ff,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: -407.99994
+      value: -865
       objectReference: {fileID: 0}
     - target: {fileID: 1304955669154038257, guid: b66fd64baee7c044a8b8d52f92fd88ff,
         type: 3}
