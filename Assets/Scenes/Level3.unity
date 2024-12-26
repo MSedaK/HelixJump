@@ -857,6 +857,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 72dbad89b0554c443b403827bed9f5a3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _bounceHeight: 5
+  _fallSpeed: 5
   jumpsource: {fileID: 242526694}
   jumpclip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
 --- !u!114 &242526689
@@ -1387,6 +1389,7 @@ MonoBehaviour:
   ball: {fileID: 242526686}
   offset: {x: 0, y: 0.6, z: -6.12}
   smoothSpeed: 0.05
+  minY: -100
 --- !u!1 &356352845
 GameObject:
   m_ObjectHideFlags: 0
@@ -1798,7 +1801,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_Sprite: {fileID: 21300000, guid: dc4903137b6efb049b97bb53ccc45e13, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 1, g: 0.98595166, b: 0.41037738, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -1972,18 +1975,6 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 460699476}
   m_PrefabAsset: {fileID: 0}
---- !u!114 &460699478 stripped
-MonoBehaviour:
-  m_CorrespondingSourceObject: {fileID: 1304955669154038258, guid: b66fd64baee7c044a8b8d52f92fd88ff,
-    type: 3}
-  m_PrefabInstance: {fileID: 460699476}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 23f9ac44728580c41ad91debed290eab, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!1 &550451328
 GameObject:
   m_ObjectHideFlags: 0
@@ -6407,7 +6398,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96c198fdc22ace64d8fd39fbba3cb892, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  joystick: {fileID: 460699478}
+  rotationSpeed: 300
 --- !u!114 &1704204618
 MonoBehaviour:
   m_ObjectHideFlags: 0
