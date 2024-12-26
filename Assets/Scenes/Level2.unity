@@ -7731,7 +7731,7 @@ MonoBehaviour:
   _bounceHeight: 5
   _fallSpeed: 5
   jumpsource: {fileID: 1904684904}
-  jumpclip: {fileID: 8300000, guid: ffb159a21c8a04135a5616979c828fab, type: 3}
+  jumpclip: {fileID: 8300000, guid: 03b7dcf2069682f4686df0df393e3c4d, type: 3}
 --- !u!54 &1904684896
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7999,7 +7999,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 0}
   m_PlayOnAwake: 1
-  m_Volume: 1
+  m_Volume: 0.5
   m_Pitch: 1
   Loop: 0
   Mute: 0
