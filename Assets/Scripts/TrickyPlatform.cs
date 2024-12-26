@@ -1,22 +1,20 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using DG.Tweening;
 
 public class TrickyPlatform : MonoBehaviour
 {
-    private float _duration=3f;
+    private float _duration = 1.5f; // Daha hýzlý animasyon
     public Transform target;
 
     [SerializeField] private AudioSource _Tricksource;
-    [SerializeField] private AudioClip  _Trickclip;
+    [SerializeField] private AudioClip _Trickclip;
 
-
-    void OnCollisionEnter(Collision other)
+    // Platform üzerindeki collision detection'ý ball'a taþýyoruz
+    public void TriggerPlatformFall()
     {
-        if(other.gameObject.CompareTag("TrickyPlatform")){
-            GameObject otherObj = other.gameObject; 
-            otherObj.transform.DOMoveY(target.position.y,_duration);
+        transform.DOMoveY(target.position.y, _duration);
+        if (_Tricksource != null && _Trickclip != null)
+        {
             _Tricksource.PlayOneShot(_Trickclip);
         }
     }

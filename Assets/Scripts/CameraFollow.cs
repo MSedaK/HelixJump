@@ -2,17 +2,32 @@ using UnityEngine;
 
 public class CameraFollow : MonoBehaviour
 {
-
     public Transform ball;
-    public Vector3 offset;
+    public Vector3 offset = new Vector3(0, 10, -7); // Helix Jump tarzý kamera açýsý
 
-    [SerializeField] float smoothSpeed = 0.200f;
+    [SerializeField] private float smoothSpeed = 0.1f;
+    [SerializeField] private float minY = -100f; // Kameranýn en düþük Y pozisyonu
 
-    void FixedUpdate(){
-        Vector3 desiredPosition = ball.position + offset;
-        Vector3 smoothedPosition = Vector3.Lerp(transform.position, desiredPosition,smoothSpeed);
-        transform.position = smoothedPosition;
+    void LateUpdate()
+    {
+        if (ball == null) return;
+
+        // Sadece top bizden aþaðýdaysa takip et
+        if (ball.position.y < transform.position.y)
+        {
+            Vector3 desiredPosition = new Vector3(
+                transform.position.x,
+                Mathf.Max(ball.position.y + offset.y, minY),
+                transform.position.z
+            );
+
+            Vector3 smoothedPosition = Vector3.Lerp(
+                transform.position,
+                desiredPosition,
+                smoothSpeed
+            );
+
+            transform.position = smoothedPosition;
+        }
     }
-
-
 }
