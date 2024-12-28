@@ -1,28 +1,32 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.UI;
 using TMPro;
-
 
 public class CountPoint : MonoBehaviour
 {
-
-    [SerializeField] TextMeshProUGUI _PointsText;
-    private int _points=0;
-
+    [SerializeField] private TextMeshProUGUI _PointsText;
     [SerializeField] private AudioSource _Ringsource;
-    [SerializeField] private AudioClip  _Ringclip;
+    [SerializeField] private AudioClip _Ringclip;
 
-    private void OnTriggerEnter(Collider other) {
-        if(other.gameObject.CompareTag("Invisible")){
-            _points+=5;
-            _PointsText.text = "" + _points;
-            _Ringsource.PlayOneShot(_Ringclip);
+    private PlayerStatus playerStatus;
 
-        }
-
+    private void Start()
+    {
+        playerStatus = FindObjectOfType<PlayerStatus>();
     }
-  
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.CompareTag("Invisible"))
+        {
+            playerStatus.AddPoints(5);
+            if (_PointsText != null)
+            {
+                _PointsText.text = playerStatus.GetCurrentScore().ToString();
+            }
+            if (_Ringsource != null && _Ringclip != null)
+            {
+                _Ringsource.PlayOneShot(_Ringclip);
+            }
+        }
+    }
 }

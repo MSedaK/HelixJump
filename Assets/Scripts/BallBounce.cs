@@ -1,9 +1,9 @@
-using UnityEngine;
+ï»¿using UnityEngine;
 
 public class BallBounce : MonoBehaviour
 {
     [SerializeField] private float _bounceHeight = 5f;
-    [SerializeField] private float _fallSpeed = 5f; // Düþme hýzý kontrolü
+    [SerializeField] private float _fallSpeed = 5f; // Dï¿½ï¿½me hï¿½zï¿½ kontrolï¿½
     [SerializeField] private AudioSource jumpsource;
     [SerializeField] private AudioClip jumpclip;
 
@@ -13,7 +13,7 @@ public class BallBounce : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody>();
-        // Sürekli düþme hareketi için
+        // Sï¿½rekli dï¿½ï¿½me hareketi iï¿½in
         rb.velocity = new Vector3(0, -_fallSpeed, 0);
     }
 
@@ -21,7 +21,7 @@ public class BallBounce : MonoBehaviour
     {
         if (isMoving)
         {
-            // Yatay hýzý sýfýrla (sadece dikey hareket olsun)
+            // Yatay hï¿½zï¿½ sï¿½fï¿½rla (sadece dikey hareket olsun)
             rb.velocity = new Vector3(0, rb.velocity.y, 0);
         }
     }
@@ -38,13 +38,13 @@ public class BallBounce : MonoBehaviour
         }
         else if (other.gameObject.CompareTag("TrickyPlatform"))
         {
-            rb.velocity = new Vector3(0, _bounceHeight, 0);
-            if (jumpsource != null && jumpclip != null)
+            // Don't bounce on tricky platforms
+            PlayerStatus playerStatus = GetComponent<PlayerStatus>();
+            if (playerStatus != null)
             {
-                jumpsource.PlayOneShot(jumpclip);
+                playerStatus.GameOver();
             }
 
-            // Tricky platform'u tetikle
             TrickyPlatform trickyPlatform = other.gameObject.GetComponent<TrickyPlatform>();
             if (trickyPlatform != null)
             {
