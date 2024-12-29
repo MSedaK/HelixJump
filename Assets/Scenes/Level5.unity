@@ -2860,7 +2860,7 @@ GameObject:
   - component: {fileID: 685542520}
   m_Layer: 0
   m_Name: TrickyPlatform 4.1
-  m_TagString: TrickyPlatform
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -6949,7 +6949,7 @@ GameObject:
   - component: {fileID: 1613266351}
   m_Layer: 0
   m_Name: TrickyPlatform 1.1
-  m_TagString: TrickyPlatform
+  m_TagString: Platform
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
